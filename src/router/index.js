@@ -29,6 +29,11 @@ const router = createRouter({
       name: "ExerciceFonction",
       component: () => import("../views/exercices/ExerciceFonction.vue"),
     },
+    {
+      path: "/exercices/ex-drmario",
+      name: "ExerciceDrMario",
+      component: () => import("../views/exercices/ExerciceDrMario.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });

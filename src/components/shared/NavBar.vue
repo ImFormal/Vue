@@ -13,8 +13,9 @@
       <ul class="menu" :class="{ active: isMenuActive }">
         <li><router-link to="/">Accueil</router-link></li>
         <li><router-link to="/lessons/text-interpolation">Lessons</router-link></li>
-        <li><router-link to="/exercices/ex-interpolation">Exercices</router-link></li>
-        <li><router-link to="/exercices/ex-fonction">Exercices</router-link></li>
+        <li><router-link to="/exercices/ex-interpolation">ExercicesInterpolation</router-link></li>
+        <li><router-link to="/exercices/ex-fonction">ExercicesFonction</router-link></li>
+        <li><router-link to="/exercices/ex-drmario">ExercicesDrMario</router-link></li>
       </ul>
 
       <!-- Bouton pour changer le mode -->
