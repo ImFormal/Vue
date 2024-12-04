@@ -17,6 +17,7 @@
         <li><router-link to="/exercices/ex-fonction">ExerciceFonction</router-link></li>
         <li><router-link to="/exercices/ex-drmario">ExerciceDrMario</router-link></li>
         <li><router-link to="/exercices/ex-count">ExerciceCount</router-link></li>
+        <li><router-link to="/exercices/ex-input">ExerciceInput</router-link></li>
       </ul>
 
       <!-- Bouton pour changer le mode -->

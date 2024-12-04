@@ -39,6 +39,11 @@ const router = createRouter({
       name: "ExerciceCount",
       component: () => import("../views/exercices/ExerciceCount.vue"),
     },
+    {
+      path: "/exercices/ex-input",
+      name: "ExerciceInput",
+      component: () => import("../views/exercices/ExerciceInput.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });
