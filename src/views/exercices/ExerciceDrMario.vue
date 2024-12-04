@@ -1,6 +1,6 @@
 <template>
     <div>
-      <img v-bind:src="`https://jvmag.ch/wp-content/uploads/2019/02/DRMarioiOS.jpg`" :alt="userName">
+      <img :src="`https://jvmag.ch/wp-content/uploads/2019/02/DRMarioiOS.jpg`" :alt="userName">
       <div>
         <h2>{{ userName }}</h2>
         <input v-model="userName" type="text">
