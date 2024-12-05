@@ -25,6 +25,7 @@
             <li><router-link to="/exercices/ex-watcher">Exercice Watcher</router-link></li>
             <li><router-link to="/exercices/ex-justeprix">Exercice JustePrix</router-link></li>
             <li><router-link to="/exercices/ex-card">Exercice Card</router-link></li>
+            <li><router-link to="/exercices/ex-stydyn">Exercice Styling Dynamic</router-link></li>
           </ul>
         </li>
       </ul>
