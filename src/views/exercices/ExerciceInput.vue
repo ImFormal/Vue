@@ -5,7 +5,7 @@
     <input v-on:keyup="displayInput1" />
     <p>{{ input1 }}</p>
     
-    <input v-on:keyup="displayInput2" v-on:keyup.esc="displayInput2"/>
+    <input v-on:keyup.esc="displayInput2"/>
     <p>{{ input2 }}</p>
     
     <button v-on:click="showAlert" class="button">Alerte</button>
