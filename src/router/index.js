@@ -59,6 +59,11 @@ const router = createRouter({
       name: "ExerciceJustePrix",
       component: () => import("../views/exercices/ExerciceJustePrix.vue"),
     },
+    {
+      path: "/exercices/ex-card",
+      name: "ExerciceCard",
+      component: () => import("../views/exercices/ExerciceCard.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });
