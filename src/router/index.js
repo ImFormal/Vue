@@ -54,6 +54,11 @@ const router = createRouter({
       name: "ExerciceWatcher",
       component: () => import("../views/exercices/ExerciceWatcher.vue"),
     },
+    {
+      path: "/exercices/ex-justeprix",
+      name: "ExerciceJustePrix",
+      component: () => import("../views/exercices/ExerciceJustePrix.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });

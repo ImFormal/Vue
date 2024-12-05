@@ -23,6 +23,7 @@
             <li><router-link to="/exercices/ex-input">Exercice Input</router-link></li>
             <li><router-link to="/exercices/ex-bug">Exercice Bug</router-link></li>
             <li><router-link to="/exercices/ex-watcher">Exercice Watcher</router-link></li>
+            <li><router-link to="/exercices/ex-justeprix">Exercice JustePrix</router-link></li>
           </ul>
         </li>
       </ul>
