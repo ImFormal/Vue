@@ -44,6 +44,16 @@ const router = createRouter({
       name: "ExerciceInput",
       component: () => import("../views/exercices/ExerciceInput.vue"),
     },
+    {
+      path: "/exercices/ex-bug",
+      name: "ExerciceBug",
+      component: () => import("../views/exercices/ExerciceBug.vue"),
+    },
+    {
+      path: "/exercices/ex-watcher",
+      name: "ExerciceWatcher",
+      component: () => import("../views/exercices/ExerciceWatcher.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });

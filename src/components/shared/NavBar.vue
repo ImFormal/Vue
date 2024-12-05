@@ -7,17 +7,24 @@
       </div>
 
       <!-- Bouton Menu Burger -->
-      <button class="menu-toggle" @click="toggleMenu">&#9776;</button>
+      <button class="menu-toggle" v-on:click="toggleMenu">&#9776;</button>
 
       <!-- Menu -->
       <ul class="menu" :class="{ active: isMenuActive }">
         <li><router-link to="/">Accueil</router-link></li>
         <li><router-link to="/lessons/text-interpolation">Lessons</router-link></li>
-        <li><router-link to="/exercices/ex-interpolation">ExerciceInterpolation</router-link></li>
-        <li><router-link to="/exercices/ex-fonction">ExerciceFonction</router-link></li>
-        <li><router-link to="/exercices/ex-drmario">ExerciceDrMario</router-link></li>
-        <li><router-link to="/exercices/ex-count">ExerciceCount</router-link></li>
-        <li><router-link to="/exercices/ex-input">ExerciceInput</router-link></li>
+        <li class="dropdown">
+          <a href="#" v-on:click.prevent="toggleExerciceMenu">Exercices</a>
+          <ul class="dropdown-menu" :class="{ active: isExerciceMenuActive }">
+            <li><router-link to="/exercices/ex-interpolation">Exercice Interpolation</router-link></li>
+            <li><router-link to="/exercices/ex-fonction">Exercice Fonction</router-link></li>
+            <li><router-link to="/exercices/ex-drmario">Exercice Dr Mario</router-link></li>
+            <li><router-link to="/exercices/ex-count">Exercice Count</router-link></li>
+            <li><router-link to="/exercices/ex-input">Exercice Input</router-link></li>
+            <li><router-link to="/exercices/ex-bug">Exercice Bug</router-link></li>
+            <li><router-link to="/exercices/ex-watcher">Exercice Watcher</router-link></li>
+          </ul>
+        </li>
       </ul>
 
       <!-- Bouton pour changer le mode -->
@@ -32,11 +39,19 @@
 import { ref, onMounted } from "vue";
 
 const isMenuActive = ref(false);
+const isExerciceMenuActive = ref(false);
 const isDarkMode = ref(false);
 
 // Toggle menu burger
 const toggleMenu = () => {
   isMenuActive.value = !isMenuActive.value;
+  isExerciceMenuActive.value = false; // Ferme le menu des exercices si le menu principal est ouvert
+};
+
+// Toggle menu des exercices
+const toggleExerciceMenu = () => {
+  isExerciceMenuActive.value = !isExerciceMenuActive.value;
+  isMenuActive.value = false; // Ferme le menu principal si le menu des exercices est ouvert
 };
 
 // Toggle light/dark mode
@@ -94,6 +109,10 @@ onMounted(() => {
   padding: 0;
 }
 
+.menu li {
+  position: relative;
+}
+
 .menu li a {
   color: white;
   text-decoration: none;
@@ -101,6 +120,28 @@ onMounted(() => {
 
 .menu li a:hover {
   color: #00bcd4;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin-bottom: 5px;
+}
+
+.dropdown-menu li a {
+  white-space: nowrap;
 }
 
 .menu-toggle {
@@ -143,6 +184,14 @@ onMounted(() => {
 
   .menu.active {
     display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
   }
 
   .menu-toggle {

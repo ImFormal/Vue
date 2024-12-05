@@ -7,7 +7,7 @@
         <button class="increment" v-on:click="increment">+</button>
       </div>
     </div>
-  </template>
+</template>
   
   <script>
   import { ref } from 'vue'
