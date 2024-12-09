@@ -69,6 +69,11 @@ const router = createRouter({
       name: "ExerciceStylingDyn",
       component: () => import("../views/exercices/ExerciceStylingDyn.vue"),
     },
+    {
+      path: "/exercices/ex-liste",
+      name: "ExerciceListe",
+      component: () => import("../views/exercices/ExerciceListe.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });
