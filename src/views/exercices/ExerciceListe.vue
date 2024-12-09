@@ -23,7 +23,6 @@
   import { ref } from 'vue'
   
   export default {
-    name: 'App',
     setup() {
       const newFilm = ref('')
       const filmList = ref([])

@@ -74,6 +74,26 @@ const router = createRouter({
       name: "ExerciceListe",
       component: () => import("../views/exercices/ExerciceListe.vue"),
     },
+    {
+      path: "/exercices/ex-listecourse",
+      name: "ExerciceListeCourse",
+      component: () => import("../views/exercices/ExerciceListeCourse.vue"),
+    },
+    {
+      path: "/exercices/ex-props",
+      name: "ExerciceProps",
+      component: () => import("../views/exercices/ExoPropsView.vue"),
+    },
+    {
+      path: "/exercices/ex-props2",
+      name: "ExerciceProps2",
+      component: () => import("../views/exercices/ExoPropsView2.vue"),
+    },
+    {
+      path: "/exercices/ex-props3",
+      name: "ExerciceProps3",
+      component: () => import("../views/exercices/ExoPropsView3.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });

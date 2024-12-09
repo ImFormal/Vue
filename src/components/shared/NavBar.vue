@@ -27,6 +27,10 @@
             <li><router-link to="/exercices/ex-card">Exercice Card</router-link></li>
             <li><router-link to="/exercices/ex-stydyn">Exercice Styling Dynamic</router-link></li>
             <li><router-link to="/exercices/ex-liste">Exercice Liste</router-link></li>
+            <li><router-link to="/exercices/ex-listecourse">Exercice Liste Course</router-link></li>
+            <li><router-link to="/exercices/ex-props">Exercice Props</router-link></li>
+            <li><router-link to="/exercices/ex-props2">Exercice Props2</router-link></li>
+            <li><router-link to="/exercices/ex-props3">Exercice Props3</router-link></li>
           </ul>
         </li>
       </ul>
