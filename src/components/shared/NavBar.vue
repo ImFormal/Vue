@@ -31,6 +31,8 @@
             <li><router-link to="/exercices/ex-props">Exercice Props</router-link></li>
             <li><router-link to="/exercices/ex-props2">Exercice Props2</router-link></li>
             <li><router-link to="/exercices/ex-props3">Exercice Props3</router-link></li>
+            <li><router-link to="/exercices/ex-combat">Exercice Combat</router-link></li>
+            <li><router-link to="/api-fetcher">API Fetcher</router-link></li>
           </ul>
         </li>
       </ul>

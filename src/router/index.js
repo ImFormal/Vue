@@ -94,6 +94,16 @@ const router = createRouter({
       name: "ExerciceProps3",
       component: () => import("../views/exercices/ExoPropsView3.vue"),
     },
+    {
+      path: "/exercices/ex-combat",
+      name: "ExerciceCombat",
+      component: () => import("../views/exercices/ExerciceCombat.vue"),
+    },
+    {
+      path: "/api-fetcher",
+      name: "ApiFetcher",
+      component: () => import("../views/exercices/ApiFetcher.vue"),
+    },
     //! ----------------------------Lessons Views routes ----------------------------
   ],
 });
