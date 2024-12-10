@@ -5,7 +5,7 @@
         <div class="card-body">
           <h5 class="card-title">Identifiant : {{ id }}</h5>
           <p class="card-text">
-            Voici une description de l'utilisateur ayant l'identifiant <strong>{{ id }}</strong>.
+            Voici une description de l'utilisateur <strong>{{ name }}</strong> ayant l'identifiant <strong>{{ id }}</strong>.
           </p>
           <router-link to="/lesson-router" class="btn btn-secondary">
             Retour à la liste
@@ -21,6 +21,10 @@
   defineProps({
     id: {
       type: [String, Number],
+      required: true,
+    },
+    name: {
+      type: String,
       required: true,
     },
   });
