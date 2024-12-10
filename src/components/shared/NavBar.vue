@@ -35,6 +35,7 @@
             <li><router-link to="/api-fetcher">API Fetcher</router-link></li>
           </ul>
         </li>
+        <li><router-link to="/lesson-router">Lesson Router</router-link></li>
       </ul>
 
       <!-- Bouton pour changer le mode -->
