@@ -33,6 +33,7 @@
             <li><router-link to="/exercices/ex-props3">Exercice Props3</router-link></li>
             <li><router-link to="/exercices/ex-combat">Exercice Combat</router-link></li>
             <li><router-link to="/api-fetcher">API Fetcher</router-link></li>
+            <li><router-link to="/exercices/emit">Emit</router-link></li>
           </ul>
         </li>
         <li><router-link to="/lesson-router">Lesson Router</router-link></li>

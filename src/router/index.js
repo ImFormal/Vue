@@ -24,7 +24,8 @@ const router = createRouter({
     { path: "/exercices/ex-props2", name: "ExerciceProps2", component: () => import("../views/exercices/ExoPropsView2.vue") },
     { path: "/exercices/ex-props3", name: "ExerciceProps3", component: () => import("../views/exercices/ExoPropsView3.vue") },
     { path: "/exercices/ex-combat", name: "ExerciceCombat", component: () => import("../views/exercices/ExerciceCombat.vue") },
-    { path: "/api-fetcher", name: "ApiFetcher", component: () => import("../views/exercices/ApiFetcher.vue") }
+    { path: "/api-fetcher", name: "ApiFetcher", component: () => import("../views/exercices/ApiFetcher.vue") },
+    { path: "/exercices/emit", name: "Emit", component: () => import("../views/exercices/EmitParent.vue") }
   ]
 });
 
