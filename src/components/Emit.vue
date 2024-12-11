@@ -15,6 +15,7 @@
 <script setup lang='js'>
 import { ref, defineProps, defineEmits } from 'vue';
 
+// Déclaration des props
 const props = defineProps({
   id: {
     type: String,
@@ -39,20 +40,32 @@ const props = defineProps({
   }
 });
 
-// Définition des événements émis
-const emit = defineEmits(['mon-event-premium']);
+// Définition des événements avec validation
+const emit = defineEmits({
+  'mon-event-premium': (id) => {
+    if (!id) {
+      console.error("Erreur : L'ID n'est pas fourni à l'événement 'mon-event-premium'.");
+      return false;
+    }
+    console.log("Émission de l'événement avec l'ID :", id);
+    return true;
+  }
+});
 
-
+// Références pour l'état local
 const detailsVisibles = ref(false);
 const premiumData = ref(props.premium);
 
+// Fonction pour afficher/masquer les détails
 function afficherDetails() {
   detailsVisibles.value = !detailsVisibles.value;
 }
 
+// Fonction pour basculer le statut premium et émettre l'événement
 function afficherPremium() {
   premiumData.value = !premiumData.value;
-  // emit('mon-event-premium');
-  emit('mon-event-premium',props.id);
+  // Test volontaire pour omettre l'id et voir la validation
+  // emit('mon-event-premium'); // Ceci provoquera une erreur
+  emit('mon-event-premium', props.id); // Ceci fonctionnera
 }
 </script>
