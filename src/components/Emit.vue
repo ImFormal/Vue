@@ -40,15 +40,16 @@ const props = defineProps({
   }
 });
 
-// Définition des événements avec validation
+// const emit = defineEmits(['mon-event-premium']);
 const emit = defineEmits({
   'mon-event-premium': (id) => {
-    if (!id) {
-      console.error("Erreur : L'ID n'est pas fourni à l'événement 'mon-event-premium'.");
+    if (id) {
+      return true;
+    } else {
+      console.warn('C\'est la catastrophe !!!!!!');
+      console.error('ON A PAS DE ID Dans le event mon-event-premium');
       return false;
     }
-    console.log("Émission de l'événement avec l'ID :", id);
-    return true;
   }
 });
 
@@ -64,8 +65,8 @@ function afficherDetails() {
 // Fonction pour basculer le statut premium et émettre l'événement
 function afficherPremium() {
   premiumData.value = !premiumData.value;
-  // Test volontaire pour omettre l'id et voir la validation
-  // emit('mon-event-premium'); // Ceci provoquera une erreur
-  emit('mon-event-premium', props.id); // Ceci fonctionnera
+  //oups on a oublié de passé l'id dans l'event
+  emit('mon-event-premium');
+  //emit('mon-event-premium',props.id);
 }
 </script>
