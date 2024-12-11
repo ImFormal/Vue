@@ -12,6 +12,8 @@
       <!-- Menu -->
       <ul class="menu" :class="{ active: isMenuActive }">
         <li><router-link to="/">Accueil</router-link></li>
+        <li><router-link to="/register">Register</router-link></li>
+        <li><router-link to="/login">Login</router-link></li>
         <li><router-link to="/lessons/text-interpolation">Lessons</router-link></li>
         <li class="dropdown">
           <a href="#" v-on:click.prevent="toggleExerciceMenu">Exercices</a>
