@@ -8,11 +8,13 @@
               <li class="list-group-item">{{ unAmiPhone }}</li>
               <li class="list-group-item">{{ unAmiMail }}</li>
           </ul>
+          <!-- Bouton pour supprimer l'ami -->
+          <button @click="supprimerAmi" class="btn btn-danger mt-2">Supprimer</button>
       </ul>
   </div> 
 </template>
 
-<script setup lang='js'>
+<script setup>
 import { ref, defineProps, defineEmits } from 'vue';
 
 // Déclaration des props
@@ -40,18 +42,8 @@ const props = defineProps({
   }
 });
 
-// const emit = defineEmits(['mon-event-premium']);
-const emit = defineEmits({
-  'mon-event-premium': (id) => {
-    if (id) {
-      return true;
-    } else {
-      console.warn('C\'est la catastrophe !!!!!!');
-      console.error('ON A PAS DE ID Dans le event mon-event-premium');
-      return false;
-    }
-  }
-});
+// Déclarer l'événement émis
+const emit = defineEmits(['deleteFriend']);
 
 // Références pour l'état local
 const detailsVisibles = ref(false);
@@ -62,11 +54,13 @@ function afficherDetails() {
   detailsVisibles.value = !detailsVisibles.value;
 }
 
-// Fonction pour basculer le statut premium et émettre l'événement
+// Fonction pour basculer le statut premium
 function afficherPremium() {
   premiumData.value = !premiumData.value;
-  //oups on a oublié de passé l'id dans l'event
-  emit('mon-event-premium');
-  //emit('mon-event-premium',props.id);
+}
+
+// Fonction pour émettre l'événement de suppression
+function supprimerAmi() {
+  emit('deleteFriend', props.id);
 }
 </script>
