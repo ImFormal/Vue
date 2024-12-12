@@ -27,13 +27,16 @@ const router = createRouter({
     { path: "/exercices/ex-combat", name: "ExerciceCombat", component: () => import("../views/exercices/ExerciceCombat.vue"), meta: {requiresAuth: true} },
     { path: "/api-fetcher", name: "ApiFetcher", component: () => import("../views/exercices/ApiFetcher.vue") , meta: {requiresAuth: true}},
     { path: "/exercices/emit", name: "Emit", component: () => import("../views/exercices/EmitParent.vue") , meta: {requiresAuth: true}},
+    { path: "/Eval", name: "Eval", component: () => import("../views/Eval.vue") , meta: {requiresAuth: true}},
     { path: "/register", name: "Register", component: () => import("../views/RegisterPageView.vue") },
     { path: "/login", name: "Login", component: () => import("../views/LoginPageView.vue") }
   ]
 });
 
+//Vérification de si on est connecté ou pas
 router.beforeEach((to, from, next) => {
   const currentUser = auth.currentUser;
+  console.log(currentUser);
 
   if (to.matched.some((record) => record.meta.requiresAuth)) {
       if (!currentUser) {

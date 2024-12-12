@@ -38,6 +38,7 @@
           </ul>
         </li>
         <li><router-link to="/lesson-router">Lesson Router</router-link></li>
+        <li><router-link to="/Eval">Eval</router-link></li>
       </ul>
 
       <!-- Bouton pour changer le mode -->
@@ -96,9 +97,8 @@ onMounted(() => {
     isDarkMode.value = true;
   }
 
-  // Vérifie si l'utilisateur est connecté
   auth.onAuthStateChanged((user) => {
-    isLoggedIn.value = !!user;
+    isLoggedIn.value = !user;
   });
 });
 
