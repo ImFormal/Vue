@@ -62,7 +62,7 @@ async function register() {
   try {
     await createUserWithEmailAndPassword(auth, email.value, password.value);
     alert("Inscription réussie !");
-    router.push({ name: "Dashboard" }); // Redirection après inscription
+    router.push({ name: "Home" }); // Redirection après inscription
   } catch (error) {
     alert("Erreur lors de l'inscription : " + error.message);
   }

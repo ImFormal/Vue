@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Logo -->
       <div class="logo">
-        <a href="#">MonLogo</a>
+        <a href="/">MonLogo</a>
       </div>
 
       <!-- Bouton Menu Burger -->
@@ -13,7 +13,6 @@
       <ul class="menu" :class="{ active: isMenuActive }">
         <li><router-link to="/">Accueil</router-link></li>
         <li><router-link to="/register">Register</router-link></li>
-        <li><router-link to="/login">Login</router-link></li>
         <li><router-link to="/lessons/text-interpolation">Lessons</router-link></li>
         <li class="dropdown">
           <a href="#" v-on:click.prevent="toggleExerciceMenu">Exercices</a>
@@ -45,16 +44,25 @@
       <button class="theme-toggle" @click="toggleTheme">
         {{ isDarkMode ? "🌞 Mode Clair" : "🌙 Mode Sombre" }}
       </button>
+
+      <!-- Bouton Connexion / Déconnexion -->
+      <button v-if="isLoggedIn" @click="logout" class="btn btn-danger">Se déconnecter</button>
+      <button v-else @click="goToLogin" class="btn btn-success">Se connecter</button>
     </div>
   </nav>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase.js";
+import { useRouter } from "vue-router";
 
 const isMenuActive = ref(false);
 const isExerciceMenuActive = ref(false);
 const isDarkMode = ref(false);
+const isLoggedIn = ref(false); // Suivi de l'état de connexion
+const router = useRouter();
 
 // Toggle menu burger
 const toggleMenu = () => {
@@ -87,7 +95,23 @@ onMounted(() => {
     document.documentElement.setAttribute("data-theme", "dark");
     isDarkMode.value = true;
   }
+
+  // Vérifie si l'utilisateur est connecté
+  auth.onAuthStateChanged((user) => {
+    isLoggedIn.value = !!user;
+  });
 });
+
+// Déconnexion
+async function logout() {
+  await signOut(auth);
+  router.push({ name: "Home" }); 
+}
+
+// Redirection vers la page de connexion
+function goToLogin() {
+  router.push({ name: "Login" });
+}
 </script>
 
 <style scoped>

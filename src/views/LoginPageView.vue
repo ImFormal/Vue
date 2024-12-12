@@ -32,7 +32,7 @@ const router = useRouter();
 async function login() {
   try {
     await signInWithEmailAndPassword(auth, email.value, password.value);
-    router.push({ name: "Dashboard" }); // Redirection après connexion
+    router.push({ name: "Home" });
   } catch (error) {
     alert("Erreur de connexion : " + error.message);
   }

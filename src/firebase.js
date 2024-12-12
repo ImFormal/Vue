@@ -8,7 +8,7 @@ const firebaseConfig = {
     storageBucket: import.meta.env.VITE_STORAGE_BUCKET, // Utilisation de la variable d'environnement
     messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID, // Utilisation de la variable d'environnement
     appId: import.meta.env.VITE_APP_ID, // Utilisation de la variable d'environnement
-    databaseURL: "https://fffire-261e4-default-rtdb.europe-west1.firebasedatabase.app" // Ajoutez cette ligne
+    databaseURL: "https://projettest-3dff9-default-rtdb.europe-west1.firebasedatabase.app" // Ajoutez cette ligne
 
 };
 
