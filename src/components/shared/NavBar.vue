@@ -38,7 +38,8 @@
           </ul>
         </li>
         <li><router-link to="/lesson-router">Lesson Router</router-link></li>
-        <li><router-link to="/Eval">Eval</router-link></li>
+        <li><router-link to="/BarChart">Stats</router-link></li>
+        <li><router-link to="/CounterPinia">CounterPinia</router-link></li>
       </ul>
 
       <!-- Bouton pour changer le mode -->
@@ -98,7 +99,7 @@ onMounted(() => {
   }
 
   auth.onAuthStateChanged((user) => {
-    isLoggedIn.value = !user;
+    isLoggedIn.value = !!user;
   });
 });
 

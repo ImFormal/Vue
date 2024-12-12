@@ -1,4 +1,3 @@
-<!--
 <script setup>
 import { RouterView } from "vue-router";
 import NavBar from "./components/shared/NavBar.vue";
@@ -12,9 +11,9 @@ import Footer from "./components/shared/Footer.vue";
 </template>
 
 <style scoped></style>
--->
 
-<template>
+
+<!--<template>
   <div class="container">
     <ActiveUser ref="activeUserRef"></ActiveUser>
     <UserData :activeUser="activeUserData" v-on:update-user="updateActiveUser"></UserData>
@@ -48,3 +47,4 @@ const updateActiveUser = (data) => {
     margin: auto;
   }
 </style>
+-->

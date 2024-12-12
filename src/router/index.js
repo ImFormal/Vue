@@ -27,7 +27,8 @@ const router = createRouter({
     { path: "/exercices/ex-combat", name: "ExerciceCombat", component: () => import("../views/exercices/ExerciceCombat.vue"), meta: {requiresAuth: true} },
     { path: "/api-fetcher", name: "ApiFetcher", component: () => import("../views/exercices/ApiFetcher.vue") , meta: {requiresAuth: true}},
     { path: "/exercices/emit", name: "Emit", component: () => import("../views/exercices/EmitParent.vue") , meta: {requiresAuth: true}},
-    { path: "/Eval", name: "Eval", component: () => import("../views/Eval.vue") , meta: {requiresAuth: true}},
+    { path: "/BarChart", name: "Stats", component: () => import("../components/BarChart.vue") , meta: {requiresAuth: true}},
+    { path: "/CounterPinia", name: "CounterPinia", component: () => import("../components/CounterPinia.vue") , meta: {requiresAuth: true}},
     { path: "/register", name: "Register", component: () => import("../views/RegisterPageView.vue") },
     { path: "/login", name: "Login", component: () => import("../views/LoginPageView.vue") }
   ]
